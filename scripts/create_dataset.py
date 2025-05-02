@@ -63,18 +63,18 @@ def create_dataset(map):
 
         print("===> Split processed maps into blocks and Copying to a separate dataset folder")
         if split == "train":
-            # block size 64 because we random crop it into 48 size block in dataloader. Also skip empty/zero blocks in training set.
+            # block size 32 because we random crop it into 48 size block in dataloader. Also skip empty/zero blocks in training set.
             success = cu.split_input_and_target_map_into_blocks(emdb_id, cryoem_deposited_map_processed_file_path, simulated_map_processed_file_path, 
                                         blocks_input_dirpath, blocks_target_dirpath, block_indices_file_path,
-                                        block_size=64, stride_size=50, skip_empty=True, overwrite=False)
+                                        block_size=32, stride_size=24, skip_empty=True, overwrite=False)
             if not success:
                 return False
         else:
-            # block size 48. we dont random crop it in validation and test set. 
+            # block size 24. we dont random crop it in validation and test set. 
             # Also dont skip empty/zero blocks in validation and test set, so we can reconstruct entire map for evaluation.
             success = cu.split_input_and_target_map_into_blocks(emdb_id, cryoem_deposited_map_processed_file_path, simulated_map_processed_file_path, 
                                         blocks_input_dirpath, blocks_target_dirpath, block_indices_file_path,
-                                        block_size=48, stride_size=38, skip_empty=False, overwrite=False)
+                                        block_size=24, stride_size=18, skip_empty=False, overwrite=False)
             if not success:
                 return False
 

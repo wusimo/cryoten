@@ -189,3 +189,4 @@ temp_dir/
 .hydra/
 
 **/emda_refmacfiles
+*.xml

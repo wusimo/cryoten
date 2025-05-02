@@ -1,0 +1,39 @@
+name: cryoten_env
+channels:
+  - pytorch
+  - conda-forge
+  - cctbx
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - scipy
+  - matplotlib
+  - pillow
+  - pandas
+  - scikit-learn
+  - pytorch
+  - torchvision
+  - cctbx
+  - pip:
+    - biopython
+    - absl-py
+    - aiohttp
+    - einops
+    - empatches
+    - gemmi
+    - huggingface-hub
+    - lightning
+    - monai
+    - omegaconf
+    - python-dotenv
+    - pytorch-lightning
+    - rich
+    - safetensors
+    - seaborn
+    - tensorboard
+    - timm
+    - torchmetrics
+    - tqdm
+    - wandb 
